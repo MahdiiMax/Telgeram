@@ -1,0 +1,33 @@
+{
+    "name": "mahdiimax/telgeram",
+    "description": "A fun and easy Laravel package for building Telegram bots without the hassle.",
+    "keywords": ["laravel", "telegram", "bot", "telegraph"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mahdi Sadeghi",
+            "email": "mahdisadeghi.max@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "illuminate/support": "^13.0",
+        "illuminate/contracts": "^13.0",
+        "illuminate/http": "^13.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MahdiiMax\\Telgeram\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MahdiiMax\\Telgeram\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
