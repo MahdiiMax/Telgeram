@@ -99,7 +99,7 @@ These capabilities are part of the vision and will land as the phases above are 
 The package will be installable via Composer once released:
 
 ```bash
-composer require MahdiiMax/Telgeram
+composer require mahdiimax/telgeram
 ```
 
 ---
