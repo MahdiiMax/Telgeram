@@ -28,6 +28,11 @@ class Button
         return $this;
     }
 
+    public function hasAction(): bool
+    {
+        return $this->callbackData !== null || $this->url !== null;
+    }
+
     /**
      * @return array{text: string, callback_data?: string, url?: string}
      */
