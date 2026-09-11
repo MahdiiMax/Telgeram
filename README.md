@@ -58,8 +58,8 @@ Telgeram is developed in 13 phases. Each phase is a small, reviewable step that 
 | ✅ | 2 | **API Client** — TelegramApi HTTP client |
 | ✅ | 3 | **Messaging System** — MessageBuilder, Keyboard, Button |
 | ✅ | 4 | **Command System** — CommandRegistry, dispatch |
-| 🚧 | 5 | **Update Handler** — process updates, callbacks |
-| ⬜ | 6 | **Webhook System** — WebhookController, middleware |
+| ✅ | 5 | **Update Handler** — process updates, callbacks |
+| 🚧 | 6 | **Webhook System** — WebhookController, middleware |
 | ⬜ | 7 | **Polling System** — PollCommand for local testing |
 | ⬜ | 8 | **Conversations** — multi-step flows with state |
 | ⬜ | 9 | **Database & Models** — migrations, Eloquent |
