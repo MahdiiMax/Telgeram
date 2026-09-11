@@ -2,6 +2,8 @@
 
 namespace MahdiiMax\Telgeram;
 
+use MahdiiMax\Telgeram\Commands\CommandRegistry;
+
 class Telgeram
 {
     public function __construct(
@@ -11,5 +13,10 @@ class Telgeram
     public function getToken(): string
     {
         return $this->token ?? config('telgeram.token');
+    }
+
+    public function commands(): CommandRegistry
+    {
+        return app(CommandRegistry::class);
     }
 }
