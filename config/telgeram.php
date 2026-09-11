@@ -45,4 +45,10 @@ return [
         'connection' => null,
         'table' => 'conversation_sessions',
     ],
+
+    /*
+     * Command classes to auto-register on boot.
+     * Each entry is a class-string extending MahdiiMax\Telgeram\Commands\Command.
+     */
+    'commands' => [],
 ];
