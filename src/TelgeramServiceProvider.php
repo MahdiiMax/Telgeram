@@ -2,9 +2,12 @@
 
 namespace MahdiiMax\Telgeram;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use MahdiiMax\Telgeram\Commands\CommandRegistry;
 use MahdiiMax\Telgeram\Updates\UpdateHandler;
+use MahdiiMax\Telgeram\Webhooks\Middleware\ValidateWebhookSecret;
+use MahdiiMax\Telgeram\Webhooks\WebhookController;
 
 class TelgeramServiceProvider extends ServiceProvider
 {
@@ -23,6 +26,10 @@ class TelgeramServiceProvider extends ServiceProvider
     {
         foreach ((array) config('telgeram.commands') as $command) {
             app(CommandRegistry::class)->register($command);
+        }
+        if (config('telgeram.webhook.enabled', false)) {
+            Route::post(config('telgeram.webhook.path', 'telgeram/webhook'), WebhookController::class)
+                ->middleware(ValidateWebhookSecret::class);
         }
         if ($this->app->runningInConsole()) {
             $this->publishes([
