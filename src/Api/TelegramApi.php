@@ -65,4 +65,12 @@ class TelegramApi
     {
         return $this->request('deleteWebhook');
     }
+
+    /**
+     * @param array<string, mixed> $params
+     */
+    public function getUpdates(array $params = []): Response
+    {
+        return $this->request('getUpdates', $params);
+    }
 }
