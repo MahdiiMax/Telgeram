@@ -29,6 +29,8 @@ return [
     'webhook' => [
         'url' => env('TELGERAM_WEBHOOK_URL'),
         'secret' => env('TELGERAM_WEBHOOK_SECRET'),
+        'enabled' => (bool) env('TELGERAM_WEBHOOK_ENABLED', false),
+        'path' => env('TELGERAM_WEBHOOK_PATH', 'telgeram/webhook'),
     ],
 
     /*

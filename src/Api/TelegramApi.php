@@ -48,4 +48,29 @@ class TelegramApi
             'text' => $text,
         ], $extra));
     }
+
+    public function setWebhook(string $url, bool $dropPendingUpdates = false, ?string $secretToken = null): Response
+    {
+        $params = [
+            'url' => $url,
+            'drop_pending_updates' => $dropPendingUpdates,
+        ];
+        if ($secretToken !== null) {
+            $params['secret_token'] = $secretToken;
+        }
+        return $this->request('setWebhook', $params);
+    }
+
+    public function deleteWebhook(): Response
+    {
+        return $this->request('deleteWebhook');
+    }
+
+    /**
+     * @param array<string, mixed> $params
+     */
+    public function getUpdates(array $params = []): Response
+    {
+        return $this->request('getUpdates', $params);
+    }
 }
