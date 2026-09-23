@@ -7,6 +7,8 @@ use Illuminate\Support\ServiceProvider;
 use MahdiiMax\Telgeram\Api\TelegramApi;
 use MahdiiMax\Telgeram\Commands\CommandRegistry;
 use MahdiiMax\Telgeram\Conversations\ConversationManager;
+use MahdiiMax\Telgeram\Database\Contracts\ConversationStore;
+use MahdiiMax\Telgeram\Database\EloquentConversationStore;
 use MahdiiMax\Telgeram\Polling\PollCommand;
 use MahdiiMax\Telgeram\Polling\Poller;
 use MahdiiMax\Telgeram\Updates\UpdateHandler;
@@ -27,6 +29,7 @@ class TelgeramServiceProvider extends ServiceProvider
         $this->app->singleton(TelegramApi::class, fn() => new TelegramApi((string) config('telgeram.token')));
         $this->app->singleton(Poller::class);
         $this->app->singleton(ConversationManager::class);
+        $this->app->singleton(ConversationStore::class, EloquentConversationStore::class);
     }
 
     public function boot(): void
@@ -43,6 +46,9 @@ class TelgeramServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__ . '/../config/telgeram.php' => config_path('telgeram.php'),
             ], 'telgeram-config');
+            $this->publishesMigrations([
+                __DIR__ . '/../database/migrations' => database_path('migrations'),
+            ], 'telgeram-migrations');
         }
     }
 }
