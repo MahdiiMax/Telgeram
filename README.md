@@ -62,8 +62,8 @@ Telgeram is developed in 13 phases. Each phase is a small, reviewable step that 
 | ✅ | 6 | **Webhook System** — WebhookController, middleware |
 | ✅ | 7 | **Polling System** — PollCommand for local testing |
 | ✅ | 8 | **Conversations** — multi-step flows with state |
-| 🚧 | 9 | **Database & Models** — migrations, Eloquent |
-| ⬜ | 10 | **Artisan Commands** — CLI tools |
+| ✅ | 9 | **Database & Models** — migrations, Eloquent |
+| 🚧 | 10 | **Artisan Commands** — CLI tools |
 | ⬜ | 11 | **Events** — dispatch events |
 | ⬜ | 12 | **Testing & Docs** — Pest tests, documentation |
 | ⬜ | 13 | **Polish & Release** — Packagist submission |
